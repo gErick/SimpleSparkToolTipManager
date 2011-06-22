@@ -1,0 +1,17 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace components "com.lafabrick.spark.components.*";
+
+components|SparkToolTip
+{
+	skinClass:ClassReference("com.lafabrick.spark.skins.SparkToolTipSkin");
+	
+	fillColor :#2A2A2A;
+	fillAlpha :.6;
+	
+	borderColor :#202020;
+	borderAlpha :1;
+	
+	cornerRadius : 6;
+}

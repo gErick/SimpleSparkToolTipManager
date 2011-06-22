@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:s="library://ns.adobe.com/flex/spark"
+               minHeight="600" minWidth="955">
+
+
+    <fx:Style source="default.css" />
+
+    <fx:Script>
+        <![CDATA[
+            import com.lafabrick.spark.ToolTipHelper;
+            import com.lafabrick.spark.components.SparkToolTip;
+
+            import mx.core.IToolTip;
+            import mx.events.ToolTipEvent;
+            import mx.managers.ToolTipManager;
+
+            public var currentToolTip:IToolTip;
+
+            protected function showManualTooltip():void
+            {
+                var gPos:Point = b2.localToGlobal(new Point(b2.x, b2.y + b2.height));
+                currentToolTip = ToolTipManager.createToolTip('dyn tooltip', gPos.x, gPos.y, null, b2);
+            }
+
+            protected function destroyToolTip():void
+            {
+                ToolTipManager.destroyToolTip(currentToolTip);
+                //ToolTipManager.destroyToolTip(ToolTipManager.currentToolTip);
+            }
+
+            protected function showSparkTooltip1(e:ToolTipEvent, tipText:String):void
+            {
+                var tp:SparkToolTip = new SparkToolTip();
+
+                tp.text = tipText;
+
+                e.toolTip = tp;
+            }
+        ]]>
+    </fx:Script>
+
+    <s:states>
+        <s:State name="tooltip" />
+        <s:State name="cursor" />
+        <s:State name="popupManager" />
+        <s:State name="dragManager" />
+        <s:State name="focusManager" />
+    </s:states>
+
+
+    <s:HGroup horizontalCenter="0" verticalCenter="0">
+
+        <s:Button id="b1" label="automatic basic tooltip" toolTip="test" />
+
+        <s:Button id="b2" label="manual basic tooltip"
+                  rollOut="destroyToolTip()" rollOver="showManualTooltip()" />
+
+        <s:Button id="b3" label="manual spark tooltip" toolTip="un super tip"
+                  toolTipCreate="showSparkTooltip1(event, b3.toolTip )" />
+
+        <s:Button id="b4" label="SparkToolTipManager" toolTip="un super tip"
+                  toolTipCreate="ToolTipHelper.showTip(event,  SparkToolTip, b3.toolTip )" />
+
+        <!--<s:Button label="b3" toolTip="test" />-->
+    </s:HGroup>
+
+</s:Application>
