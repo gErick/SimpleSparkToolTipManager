@@ -5,26 +5,32 @@ package com.lafabrick.spark.components
     import spark.components.supportClasses.TextBase;
     import spark.primitives.BitmapImage;
 
-    [Style(name = "fillColor", format = "Color", minValue = "0")]
-    [Style(name = "fillAlpha", format = "Number", minValue = "0", maxValue = "1")]
-    [Style(name = "borderColor", format = "Color", minValue = "0")]
-    [Style(name = "borderAlpha", format = "Number", minValue = "0", maxValue = "1")]
-    [Style(name = "cornerRadius", format = "uint", minValue = "0", maxValue = "12")]
+
+    [Style( name = "fillColor", format = "Color", minValue = "0" )]
+    [Style( name = "fillAlpha", format = "Number", minValue = "0", maxValue = "1" )]
+    [Style( name = "borderColor", format = "Color", minValue = "0" )]
+    [Style( name = "borderAlpha", format = "Number", minValue = "0", maxValue = "1" )]
+    [Style( name = "cornerRadius", format = "uint", minValue = "0", maxValue = "12" )]
     public class SparkToolTip extends SkinnableComponent implements IToolTip
     {
 
-        public function SparkToolTip()
+        private var _icon :Class;
+
+
+        public function get icon() :Class
         {
-            super();
+            return _icon;
+
         }
 
-        [SkinPart(required = "false")]
-        public var iconDIsplay:BitmapImage;
 
-        [SkinPart(required = "false")]
-        public var tipDisplay:TextBase;
+        public function set icon( value :Class ) :void
+        {
+            _icon = value;
+        }
 
-        private var _icon:Class;
+        [SkinPart( required = "false" )]
+        public var iconDIsplay :BitmapImage;
 
         /*public override function get screen():Rectangle
         {
@@ -32,46 +38,51 @@ package com.lafabrick.spark.components
             return super.screen;
         }*/
 
-        private var _text:String;
+        private var _text :String;
 
-        public function get text():String
+
+        public function get text() :String
         {
             return _text;
         }
 
-        public function set text(value:String):void
+
+        public function set text( value :String ) :void
         {
             _text = value;
         }
 
-        public function get icon():Class
+        [SkinPart( required = "false" )]
+        public var tipDisplay :TextBase;
+
+
+        public function SparkToolTip()
         {
-            return _icon;
+            super();
         }
 
-        public function set icon(value:Class):void
-        {
-            _icon = value;
-        }
 
-        protected override function partAdded(partName:String, instance:Object):void
+        protected override function partAdded( partName :String, instance :Object ) :void
         {
-            switch (partName)
+            switch ( partName )
             {
                 case 'tipDisplay':
-                    TextBase(instance).text = _text;
+                    TextBase( instance ).text = _text;
                     break;
 
                 case 'iconDIsplay':
-                    BitmapImage(instance).source = _icon;
+                    BitmapImage( instance ).source = _icon;
                     break;
             }
+
         }
 
-        protected override function partRemoved(partName:String, instance:Object):void
+
+        protected override function partRemoved( partName :String, instance :Object ) :void
         {
             //TODO Auto-generated method stub
-            super.partRemoved(partName, instance);
+            super.partRemoved( partName, instance );
+
         }
     }
 }

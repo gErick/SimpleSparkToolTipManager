@@ -7,11 +7,13 @@ components|SparkToolTip
 {
 	skinClass:ClassReference("com.lafabrick.spark.skins.SparkToolTipSkin");
 	
-	fillColor :#2A2A2A;
+	fillColor :#303030;
 	fillAlpha :.6;
 	
 	borderColor :#202020;
-	borderAlpha :1;
+	borderAlpha :0.8;
 	
-	cornerRadius : 6;
+	cornerRadius : 8;
+	
+	color:#FFFFFF;
 }

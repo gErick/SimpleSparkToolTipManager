@@ -7,19 +7,21 @@
 
     <fx:Script>
         <![CDATA[
-            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+
+            override protected function updateDisplayList( unscaledWidth :Number, unscaledHeight :Number ) :void
             {
-                fillColor.color = uint(getStyle('fillColor'));
-                fillColor.alpha = Number(getStyle('AlphaColor'));
+                fill.color = uint( getStyle( 'fillColor' ));
+                fill.alpha = Number( getStyle( 'fillAlpha' ));
 
-                strokeColor.color = uint(getStyle('borderColor'));
-                strokeColor.alpha = Number(getStyle('borderAlpha'));
+                stroke.color = uint( getStyle( 'borderColor' ));
+                stroke.alpha = Number( getStyle( 'borderAlpha' ));
 
-                border.radiusX = Number(getStyle('cornerRadius'));
-                border.radiusY = Number(getStyle('cornerRadius'));
+                border.radiusX = Number( getStyle( 'cornerRadius' ));
+                border.radiusY = Number( getStyle( 'cornerRadius' ));
 
-                super.updateDisplayList(unscaledWidth, unscaledHeight);
+                super.updateDisplayList( unscaledWidth, unscaledHeight );
             }
+
         ]]>
     </fx:Script>
 
@@ -30,22 +32,23 @@
 
 
 
+
     <s:Rect id="border"
-            bottom="0" left="0" right="0"
-            top="0"
-            radiusX="6" radiusY="6">
+        left="0" right="0" top="0" bottom="0">
+        <!--topLeftRadiusX="6" topLeftRadiusY="6" topRightRadiusX="6"
+        topRightRadiusY="6" bottomLeftRadiusX="6" bottomLeftRadiusY="6"
+        bottomRightRadiusX="6" bottomRightRadiusY="6"-->
         <s:fill>
-            <s:SolidColor id="fillColor" />
+            <s:SolidColor id="fill" />
         </s:fill>
         <s:stroke>
-            <s:SolidColorStroke id="strokeColor"
-                                pixelHinting="true" />
+            <s:SolidColorStroke id="stroke" pixelHinting="true" />
         </s:stroke>
     </s:Rect>
 
     <s:Label id="tipDisplay"
-             bottom="10" left="10" right="10"
-             textAlign="center" top="10" verticalAlign="middle" />
+        left="6" right="6" top="6" bottom="6"
+        textAlign="center" verticalAlign="middle" />
 
 
 </s:Skin>

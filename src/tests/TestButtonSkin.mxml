@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" xmlns:mx="library://ns.adobe.com/flex/mx">
+    <!-- host component -->
+    <fx:Metadata>
+		[HostComponent("spark.components.Button")]
+	</fx:Metadata>
+
+    <!-- states -->
+    <s:states>
+        <s:State name="disabled" />
+        <s:State name="down" />
+        <s:State name="over" />
+        <s:State name="up" />
+    </s:states>
+
+
+    <s:Path 
+        data="M 25 0 C 25 0 197 0 197 0 C 204 0 209 6 209 14 C 209 14 209 60 209 60 C 209 68 204 74 197 74 C 197 74 25 74 25 74 C 18 74 13 68 13 60 C 13 60 2 37 2 37 C 2 37 12 14 12 14 C 15 6 18 0 25 0 Z " winding="evenOdd" blendMode="normal"
+        alpha="1">
+        <s:fill>
+            <s:LinearGradient 
+                x="146" y="0"
+                scaleX="66" rotation="90">
+                <s:GradientEntry 
+                    color="#353538" ratio="0" alpha="1" />
+                <s:GradientEntry 
+                    color="#2b2c2e" ratio="1" alpha="1" />
+            </s:LinearGradient>
+        </s:fill>
+    </s:Path>
+    <s:Path 
+        data="M 24 1 C 24 1 197 1 197 1 C 204 1 209 7 209 15 C 209 15 209 61 209 61 C 209 69 204 75 197 75 C 197 75 25 75 25 75 C 18 75 16 71 11 62 C 11 62 0 37 0 37 C 0 37 11 13 11 13 C 16 3 17 1 24 1 Z " winding="evenOdd" blendMode="normal"
+        alpha="1">
+        <s:fill>
+            <s:LinearGradient 
+                x="131" y="44"
+                scaleX="30" rotation="90">
+                <s:GradientEntry 
+                    color="#404043" ratio="0" alpha="0" />
+                <s:GradientEntry 
+                    color="#717171" ratio="1" alpha="1" />
+            </s:LinearGradient>
+        </s:fill>
+    </s:Path>
+    <s:Path 
+        data="M 27 3 C 27 3 195 3 195 3 C 202 3 207 9 207 16 C 207 16 207 60 207 60 C 207 67 202 73 195 73 C 195 73 27 73 27 73 C 20 73 17 69 14 61 C 14 61 5 38 5 38 C 5 38 14 14 14 14 C 19 5 20 3 27 3 Z " winding="evenOdd" blendMode="normal"
+        alpha="1">
+        <s:fill>
+            <s:LinearGradient 
+                x="142" y="0"
+                scaleX="62" rotation="90">
+                <s:GradientEntry 
+                    color="#4b4c50" ratio="0" alpha="1" />
+                <s:GradientEntry 
+                    color="#2b2c2e" ratio="1" alpha="1" />
+            </s:LinearGradient>
+        </s:fill>
+        <s:filters>
+            <s:DropShadowFilter 
+                color="#8f9298" angle="90" distance="2"
+                alpha="0.65" quality="0" inner="true" />
+            <s:DropShadowFilter 
+                color="#000000" angle="45" distance="0"
+                alpha="0.65" quality="2" />
+        </s:filters>
+    </s:Path>
+
+
+    <s:Label id="labelDisplay"
+        left="6" right="6" top="6" bottom="6"
+        textAlign="center" verticalAlign="middle" />
+</s:Skin>

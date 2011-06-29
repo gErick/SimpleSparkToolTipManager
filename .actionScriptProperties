@@ -14,10 +14,9 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="XPL_SystemManagers.mxml"/>
+    <application path="SparkToolTipManager.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
 </actionScriptProperties>
-
